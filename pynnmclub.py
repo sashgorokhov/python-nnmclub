@@ -198,7 +198,7 @@ class NNMClub:
             try:
                 yield self._row_to_data(headers, row)
             except Exception as e:
-                logger.warning('Error while parsing row')
+                logger.exception('Error while parsing row')
                 logger.debug(row)
                 continue
 
