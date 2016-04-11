@@ -1,6 +1,9 @@
 python-nnmclub
 **************
 
+.. image:: https://badge.fury.io/py/python-nnmclub.svg
+    :target: https://badge.fury.io/py/python-nnmclub
+
 Python library to search torrents on popular russian torrent tracker.
 
 Installation
