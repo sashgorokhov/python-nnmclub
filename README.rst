@@ -16,8 +16,8 @@ Usage
 =====
 
 .. code-block:: python
-    import pynnmclub
 
+    import pynnmclub
     nnmclub = pynnmclub.NNMClub()
     results = nnmclub.search("Iron Man")
 
