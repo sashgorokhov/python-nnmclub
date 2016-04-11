@@ -1,6 +1,14 @@
 import requests
 import unittest
 import pynnmclub
+import logging
+
+logger = logging.getLogger('pynnmclub')
+
+logger.setLevel(logging.DEBUG)
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+logger.addHandler(ch)
 
 
 class TestPyNnmClub(unittest.TestCase):
