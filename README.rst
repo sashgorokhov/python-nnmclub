@@ -1,9 +1,6 @@
 python-nnmclub
 **************
 
-.. image:: https://travis-ci.org/sashgorokhov/python-nnmclub.svg?branch=master
-    :target: https://travis-ci.org/sashgorokhov/python-nnmclub
-
 Python library to search torrents on popular russian torrent tracker.
 
 Installation

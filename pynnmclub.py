@@ -24,7 +24,7 @@ BASE_URL = 'http://nnmclub.to/'
 FORUM_URL = urlparse.urljoin(BASE_URL, 'forum/')
 LOGIN_URl = urlparse.urljoin(FORUM_URL, 'login.php')
 SEARCH_URL = urlparse.urljoin(FORUM_URL, 'tracker.php')
-
+TIMEOUT = 30.0
 
 _result_dict_empty = {
     'topic': None,
@@ -107,6 +107,7 @@ class NNMClub:
         self.username = username
         self.password = password
         self.session = session or requests.Session()
+        self.session.params.update({'timeout': TIMEOUT})
 
         if self.username and self.password:
             self.login(self.username, self.password)
