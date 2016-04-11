@@ -1,7 +1,8 @@
 from distutils.core import setup
 
-with open('README.rst') as file:
-    long_description = file.read()
+with open('README.rst') as readme:
+    with open('HISTORY.rst') as history:
+        long_description = readme.read() + '\n\n' + history.read()
 
 setup(
     requires=['beautifulsoup4', 'requests'],

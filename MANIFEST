@@ -1,3 +1,2 @@
-pynnmclub.py
-setup.py
-README.rst
+include *.rst
+include *.py

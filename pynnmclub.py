@@ -20,8 +20,8 @@ logger = logging.getLogger('pynnmclub')
 # ch.setLevel(logging.DEBUG)
 # logger.addHandler(ch)
 
-BASE_URl = 'http://nnmclub.to/'
-FORUM_URL = urlparse.urljoin(BASE_URl, 'forum/')
+BASE_URL = 'http://nnmclub.to/'
+FORUM_URL = urlparse.urljoin(BASE_URL, 'forum/')
 LOGIN_URl = urlparse.urljoin(FORUM_URL, 'login.php')
 SEARCH_URL = urlparse.urljoin(FORUM_URL, 'tracker.php')
 
@@ -33,13 +33,13 @@ _result_dict_empty = {
     'size': None,  # in bytes
     'seeders': None,
     'leechers': None,
-    'added': None,  # type: datetime.date
+    'added': None,  # type: datetime.datetime
     'views': None,
     'messages': None,
     'rating_number': None,  # how many people rated this,
     'rating': None,  # rating. float from 0 to 5
     'thanks': None,  # how many people thanked this torrent
-    'golden': None
+    #'golden': None
 }
 
 
@@ -158,7 +158,7 @@ class NNMClub:
                 try:
                     result[_header_to_result_map[header_name]] = _header_clean_map[header_name](td)
                 except:
-                    logger.warning('Error while parsing header %s', header_name)
+                    logger.warning('Error while parsing header %s', header_name, exc_info=True)
                     logger.debug(td)
                     continue
 
@@ -198,7 +198,7 @@ class NNMClub:
             try:
                 yield self._row_to_data(headers, row)
             except Exception as e:
-                logger.exception('Error while parsing row')
+                logger.warning('Error while parsing row', exc_info=True)
                 logger.debug(row)
                 continue
 
