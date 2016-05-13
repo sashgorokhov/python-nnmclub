@@ -5,9 +5,9 @@ with open('README.rst') as readme:
         long_description = readme.read() + '\n\n' + history.read()
 
 setup(
-    requires=['beautifulsoup4', 'requests'],
+    install_requires=['beautifulsoup4', 'requests'],
     name='python-nnmclub',
-    version='0.1',
+    version='1.0',
     py_modules=['pynnmclub'],
     url='https://github.com/sashgorokhov/python-nnmclub',
     download_url='https://github.com/sashgorokhov/python-nnmclub/archive/master.zip',
